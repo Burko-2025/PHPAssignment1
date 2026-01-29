@@ -1,7 +1,8 @@
 <?php
+    session_start();
     require 'database.php';
 
-    $queryPlayers = 'SELECT firstName, lastName, dob, team, goals, assists, points, gamesPlayed
+    $queryPlayers = 'SELECT contactID, firstName, lastName, dob, team, goals, assists, points, gamesPlayed
        FROM players';
     $statement = $db->prepare($queryPlayers);
     $statement->execute();
@@ -32,6 +33,8 @@
               <th>Assists</th>
               <th>Points</th>
               <th>Games Played</th>
+              <th>&nbsp;</th><!-- for the edit button -->
+              <th>&nbsp;</th><!-- for the delete button -->
 
             </tr>
             <?php foreach ($players as $player): ?>
@@ -44,10 +47,20 @@
               <td><?php echo htmlspecialchars($player['assists']); ?></td>
               <td><?php echo htmlspecialchars($player['points']); ?></td>
               <td><?php echo htmlspecialchars($player['gamesPlayed']); ?></td>
+            
+              <td><form action="update_contact_form.php" method="post">
+                <input type="hidden" name="contact_id" 
+                value="<?php echo htmlspecialchars($player['contactID']); ?>">
+                <input type="submit" value="Update"></form></td>
+              <td><form action="delete_contact.php" method="post">
+                <input type="hidden" name="contact_id" 
+                value="<?php echo htmlspecialchars($player['contactID']); ?>">
+                <input type="submit" value="Delete"></form></td>
             </tr>
             <?php endforeach; ?>
           </table>
 
+          <p><a href="add_contact_form.php">Add New Player</a></p>
 
         </main>
 

@@ -5,7 +5,7 @@
 <html>
 
     <head>
-        <title>Contact Manager - Database Error</title>
+        <title>Players Manager - Database Error</title>
         <link rel="stylesheet" type="text/css" href="css/contact.css"/>
       </head>
 
@@ -15,10 +15,10 @@
         <main>
           <h2>Database Error</h2>
 
-          <p>There was an error connecting to the database.</p>
-          <p>The database must be installed and configured correctly.</p>
-          <p>MySQL must be running.</p>
-          <p>Error Message: <?php echo $_SESSION['database_error']; ?></p>
+          <p2>There was an error connecting to the database.</p2>
+          <p2>The database must be installed and configured correctly.</p2>
+          <p2>MySQL must be running.</p2>
+          <p2>Error Message: <?php echo $_SESSION['database_error']; ?></p2>
 
           <p><a href="index.php">View Contact List</a></p>
         </main>
