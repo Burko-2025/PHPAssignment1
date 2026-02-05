@@ -1,8 +1,14 @@
 <?php
+
     session_start();
 
     require 'database.php';
 
+    $query = 'SELECT typeID, playerType FROM types';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $types = $statement->fetchAll();
+    $statement->closeCursor();
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +51,17 @@
               <label for="gamesPlayed">Games Played:</label>
               <input type="text" id="gamesPlayed" name="games_played" required><br>
 
+              <label>Contact Type:</label>
+              <select name="type_id">
+                <?php foreach ($types as $type) : ?>
+                  <option value="<?php echo $type['typeID']; ?>">
+                    <?php echo $type['playerType']; ?>
+                  </option>
+                <?php endforeach; ?>
+              </select><br>
+
+              <label for="image">Upload Image:</label>
+              <input type="file" id="image" name="file1"><br>
 
             </div>
 

@@ -4,15 +4,20 @@
 
     // get data from form
     $contact_id = filter_input(INPUT_POST, 'contact_id', FILTER_VALIDATE_INT);
-    $queryPlayers = 'SELECT contactID, firstName, lastName, dob, team, goals, assists, points, gamesPlayed 
-        FROM players WHERE contactID = :contact_id';
+    $queryPlayers = 'SELECT contactID, firstName, lastName, dob, team, goals, assists, points, 
+        gamesPlayed, typeId, imageName FROM players WHERE contactID = :contact_id';
     $statement = $db->prepare($queryPlayers);
     $statement->bindValue(':contact_id', $contact_id);
     $statement->execute();
     $player = $statement->fetch();
-    var_dump($player);
     $statement->closeCursor();
 
+    // Get the contact types
+    $query = 'SELECT typeID, playerType FROM types';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $types = $statement->fetchAll();
+    $statement->closeCursor();
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +69,25 @@
               <label for="gamesPlayed">Games Played:</label>
               <input type="text" id="gamesPlayed" name="games_played" required 
                   value="<?php echo htmlspecialchars($player['gamesPlayed']); ?>"><br>
+
+              <label>Contact Type:</label>
+              <select name="type_id">
+                <?php foreach ($types as $type) : ?>
+                  <option value="<?php echo $type['typeID']; ?>" <?php
+                    if ($type['typeID'] == $player['typeID']) echo 'selected';
+                  ?>>
+                    <?php echo $type['playerType']; ?>
+                  </option>
+                <?php endforeach; ?>
+              </select><br>
+
+              <?php if (!empty($player['imageName'])): ?>
+                  <label>Current Image:</label>
+                  <img src="assets/images/<?php echo htmlspecialchars($player['imageName']); ?>" height="100"><br /> 
+              <?php endif; ?>
+
+              <label for="image">Update Image:</label>
+              <input type="file" id="image" name="file1"><br>
 
             </div>
 
