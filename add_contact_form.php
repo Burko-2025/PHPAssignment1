@@ -2,6 +2,11 @@
 
     session_start();
 
+    if (!isset($_SESSION['isLoggedIn'])){
+        header("Location: login_form.php");
+        die();
+    }
+
     require 'database.php';
 
     $query = 'SELECT typeID, playerType FROM types';
@@ -66,7 +71,7 @@
             </div>
 
             <div id="buttons">
-              <input type="submit" value="Save Contact"><br>
+              <input type="submit" class="save-button" value="Save Contact"><br>
             </div>
 
           </form>

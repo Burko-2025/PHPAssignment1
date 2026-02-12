@@ -24,6 +24,58 @@ main {
     border: 4px solid #010101;
 }
 
+.update-button input {
+    display: inline-block;
+    background-color: #19ff3f;
+    text-decoration: none;
+    color: #060606;
+    border-radius: 2px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.update-button input:hover {
+    background-color: #19a330;
+}
+
+.updatePlayer-button input {
+    display: inline-block;
+    background-color: #19ff3f;
+    text-decoration: none;
+    color: #060606;
+    border-radius: 2px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.updatePlayer-button input:hover {
+    background-color: #19a330;
+}
+
+.save-button {
+
+    margin: 25px 0;
+    padding: 3px 15px;
+    background-color: #11b4fa;
+    text-decoration: none;
+    color: #fbfafa;
+    border-radius: 3px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #238bcc;
+}
+
+.save-button a {
+    color: #fbfafa;
+    text-decoration: none;
+}
+
+
 h1 {
     margin: 0;
     color: rgb(255, 255, 255);
@@ -68,7 +120,6 @@ label{
 }
 
 #buttons input {
-  float: left;
   margin-bottom: .5em;
 }
 br {
@@ -76,13 +127,10 @@ br {
 }
 
 p {
-    padding-top: 80px;
+
     color: #faf8f8;
 }
-#p2 {
-    color: #090909;
-    font-size: 1.2em;
-}
+
 footer {
     background-color: #464646;
     text-align: center;

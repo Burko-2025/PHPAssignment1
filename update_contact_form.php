@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['isLoggedIn'])){
+        header("Location: login_form.php");
+        die();
+    }
 
     require 'database.php';
 
@@ -91,7 +96,7 @@
 
             </div>
 
-            <div id="buttons">
+            <div id="buttons" class="updatePlayer-button">
               <input type="submit" value="Update Player"><br>
             </div>
 

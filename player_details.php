@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if (!isset($_SESSION['isLoggedIn'])){
+        header("Location: login_form.php");
+        die();
+    }
     require 'database.php';
 
     // get contact id from form

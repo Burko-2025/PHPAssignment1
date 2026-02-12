@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if (!isset($_SESSION['isLoggedIn'])){
+        header("Location: login_form.php");
+        die();
+    }
     require 'database.php';
 
     $queryPlayers = 'SELECT p.contactID, p.firstName, p.lastName, p.dob, p.team, p.goals, p.assists, p.points, p.gamesPlayed, p.imageName, t.playerType
@@ -22,7 +26,7 @@
         <?php include 'header.php'; ?>
 
         <main>
-          <h2>Player List</h2>
+          <h2>Player List (<?php echo "logged in User: " . $_SESSION['userName']; ?>)</h2>
           <table>
             <tr>
               <th>First Name</th>
@@ -55,15 +59,15 @@
               <img src="<?php echo './assets/images/' . htmlspecialchars($player['imageName']); ?>" 
                 alt="<?php echo htmlspecialchars($player['firstName'] . ' ' . $player['lastName']); ?>">
               </td>
-              <td><form action="update_contact_form.php" method="post">
+              <td><form class="update-button" action="update_contact_form.php" method="post">
                 <input type="hidden" name="contact_id" 
                 value="<?php echo htmlspecialchars($player['contactID']); ?>">
                 <input type="submit" value="Update"></form></td>
-              <td><form action="delete_contact.php" method="post">
+              <td><form class="delete-button" action="delete_contact.php" method="post">
                 <input type="hidden" name="contact_id" 
                 value="<?php echo htmlspecialchars($player['contactID']); ?>">
                 <input type="submit" value="Delete"></form></td>
-              <td><form action="player_details.php" method="post">
+              <td><form class="details-button" action="player_details.php" method="post">
                 <input type="hidden" name="contact_id" 
                 value="<?php echo htmlspecialchars($player['contactID']); ?>">
                 <input type="submit" value="View Details"></form></td>
@@ -72,6 +76,7 @@
           </table>
 
           <p><a href="add_contact_form.php">Add New Player</a></p>
+          <p><a href="logout.php">Logout</a></p>
 
         </main>
 

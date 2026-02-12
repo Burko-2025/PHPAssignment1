@@ -63,6 +63,96 @@ header {
     background-color: #444444;
 }
 
+.update-button input {
+    display: inline-block;
+    background-color: #19ff3f;
+    text-decoration: none;
+    color: #060606;
+    border-radius: 2px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.update-button input:hover {
+    background-color: #19a330;
+}
+
+.delete-button input {
+    display: inline-block;
+    background-color: #ff1616;
+    text-decoration: none;
+    color: #060606;
+    border-radius: 2px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button input:hover {
+    background-color: #a21515;
+}
+
+.details-button input {
+    display: inline-block;
+    background-color: #010101;
+    text-decoration: none;
+    color: #fbfafa;
+    border-radius: 2px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.details-button input:hover {
+    background-color: #5d5d5d;
+}
+
+.add-button {
+    display: block;
+    margin: 25px 10px ;
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: #11b4fa;
+    text-decoration: none;
+    color: #fbfafa;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #238bcc;
+}
+
+.add-button a {
+    color: #fbfafa;
+    text-decoration: none;
+}
+
+.logout-button {
+    margin: 25px  10px ;
+    width: fit-content;
+    display: block;
+    padding: 10px 48px;
+    background-color: #11b4fa;
+    text-decoration: none;
+    color: #fbfafa;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #238bcc;
+}
+
+.logout-button a {
+    color: #fbfafa;
+    text-decoration: none;
+}
+
+
+
+
+
 main {
     padding: 20px;
     display: block;
