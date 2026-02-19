@@ -13,6 +13,44 @@ header {
     text-align: center;
 
 }
+#logo {
+  position: absolute;
+  z-index: 3;
+  top: 50px;
+  left: 50px;
+  width: 140px;
+
+
+}
+  #logo > img {
+    width: 140px;
+    border-radius: 50%;
+
+  }
+  #logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+#social {
+  position: absolute;
+  z-index: 7;
+  top: 50px;
+  right: 50px;
+  width: 225px;
+}
+#social > .socialDragonbit:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+#social > .socialLinkedin:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+#social > .socialTwitter:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
 
 .container {
     max-width: 600px;
@@ -107,6 +145,7 @@ header {
 
 .add-button {
     display: block;
+    border: #010101 solid 2px;
     margin: 25px 10px ;
     width: fit-content;
     padding: 10px 15px;
@@ -128,6 +167,7 @@ header {
 }
 
 .logout-button {
+    border: #010101 solid 2px;
     margin: 25px  10px ;
     width: fit-content;
     display: block;
@@ -186,6 +226,7 @@ th, td {
 h2 {
     color: #333;
     text-align: center;
+    font-size: 2.5em;
 }
 label{
     width: 10em;

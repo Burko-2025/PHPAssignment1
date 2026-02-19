@@ -38,12 +38,12 @@
             </div>
 
             <div id="buttons">
-              <input type="submit" value="Login"><br>
+              <input type="submit" class="add-button" value="Login">
             </div>
 
           </form>
 
-        <p><a href="register_user_form.php">Register</a></p>
+        <p><a class = "add-button" href="register_user_form.php">Register</a></p>
 
         </main>
 

@@ -14,6 +14,7 @@
 
 
     require 'database.php';
+    require 'message.php';
 
     //check for duplicate entries
     $queryUsers = 'SELECT userName, password, emailAddress FROM registrations';
@@ -51,6 +52,30 @@
         $statement->closeCursor();
         $_SESSION['isLoggedIn'] = true;
         $_SESSION['userName'] = $user_name;
+
+
+        // set up email variables
+        $to_address = $email_address;
+        $to_name = $user_name;
+        $from_address = 'YOUR_USERNAME@gmail.com';
+        $from_name = 'Contact Manager 2026';
+        $subject = 'Contact Manager 2026 - Registration Complete';
+        $body = '<p>Thanks for registering with our site.</p>' .
+            '<p>Sincerely,</p>' .
+            '<p>Contact Manager 2026</p>';
+        $is_body_html = true;
+
+        
+
+        // Send email
+        try {
+            send_mail($to_address, $to_name, $from_address, $from_name, $subject, $body, $is_body_html);        
+        }
+        catch (Exception $ex) {
+            $_SESSION['error'] = $ex->getMessage();
+            header("Location: error.php");
+            die();
+        }
 
 
         // Redirect to a confirmation page

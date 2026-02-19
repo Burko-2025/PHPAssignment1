@@ -27,13 +27,13 @@
 
             </div>
 
-            <div id="buttons">
-              <input type="submit" value="Register"><br>
+            <div>
+              <input type="submit" class="add-button" value="Register">
             </div>
 
           </form>
 
-        <p><a href="login_form.php">View Login</a></p>
+        <p><a class="add-button" href="login_form.php">View Login</a></p>
 
         </main>
 

@@ -77,7 +77,7 @@
           </form>
 
 
-          <p><a href="index.php">View Player List</a></p>
+          <p><a class= "save-button" href="index.php">View Player List</a></p>
 
 
         </main>

@@ -13,7 +13,65 @@ header {
     text-align: center;
 
 }
+#logo {
+  position: absolute;
+  z-index: 3;
+  top: 50px;
+  left: 50px;
+  width: 140px;
 
+
+}
+  #logo > img {
+    width: 140px;
+    border-radius: 50%;
+
+  }
+  #logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+#social {
+  position: absolute;
+  z-index: 7;
+  top: 50px;
+  right: 50px;
+  width: 225px;
+}
+#social > .socialDragonbit:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+#social > .socialLinkedin:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+#social > .socialTwitter:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+.add-button {
+    border: #010101 solid 2px;  
+    display: block;
+    margin: 25px 0px;
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: #11b4fa;
+    text-decoration: none;
+    color: #fbfafa;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #238bcc;
+}
+
+.add-button a {
+    color: #fbfafa;
+    text-decoration: none;
+}
 
 
 main {
@@ -27,6 +85,7 @@ main {
 .update-button input {
     display: inline-block;
     background-color: #19ff3f;
+    
     text-decoration: none;
     color: #060606;
     border-radius: 2px;
@@ -40,6 +99,7 @@ main {
 
 .updatePlayer-button input {
     display: inline-block;
+    padding: 10px 15px;
     background-color: #19ff3f;
     text-decoration: none;
     color: #060606;
@@ -54,14 +114,14 @@ main {
 }
 
 .save-button {
-
+    border: #010101 solid 2px;
     margin: 25px 0;
     padding: 3px 15px;
     background-color: #11b4fa;
     text-decoration: none;
     color: #fbfafa;
     border-radius: 3px;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
@@ -75,7 +135,14 @@ main {
     text-decoration: none;
 }
 
-
+.login {
+    color: #333;
+    text-align: center;
+    font-size: 2em;
+}
+option{
+    font-size: 2em;
+}
 h1 {
     margin: 0;
     color: rgb(255, 255, 255);
@@ -84,6 +151,7 @@ h1 {
     vertical-align: middle;
     font-size: 5em;
 }
+
 
 table {
     width: 100%;
@@ -101,19 +169,31 @@ th, td {
 h2 {
     color: #333;
     text-align: center;
+    font-size: 3em;
 }
 label{
     width: 10em;
+    font-size: 2em;
     float: left;
     padding-right: 1em;
     padding-bottom: 0.5em;
 }
 
+
 #data input {
+    font-size: 2em;
     float: left;
     margin-bottom: .5em;
     width: 15em;
 }
+#data select {
+    float: left;
+    margin-bottom: .5em;
+    width: 6em;   
+  
+    font-size: 2em;
+}
+
 
 #data span {
     padding: .25em;
@@ -130,6 +210,7 @@ p {
 
     color: #faf8f8;
 }
+
 
 footer {
     background-color: #464646;

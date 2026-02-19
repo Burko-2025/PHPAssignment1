@@ -75,8 +75,8 @@
             <?php endforeach; ?>
           </table>
 
-          <p><a href="add_contact_form.php">Add New Player</a></p>
-          <p><a href="logout.php">Logout</a></p>
+          <p><a class = "add-button" href="add_contact_form.php">Add New Player</a></p>
+          <p><a class = "logout-button" href="logout.php">Logout</a></p>
 
         </main>
 

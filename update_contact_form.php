@@ -75,7 +75,7 @@
               <input type="text" id="gamesPlayed" name="games_played" required 
                   value="<?php echo htmlspecialchars($player['gamesPlayed']); ?>"><br>
 
-              <label>Contact Type:</label>
+              <label>Player Type:</label>
               <select name="type_id">
                 <?php foreach ($types as $type) : ?>
                   <option value="<?php echo $type['typeID']; ?>" <?php
@@ -103,7 +103,7 @@
           </form>
 
 
-          <p><a href="index.php">View Player List</a></p>
+          <p><a class= "add-button" href="index.php">View Player List</a></p>
 
 
         </main>
