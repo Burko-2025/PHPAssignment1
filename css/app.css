@@ -25,7 +25,7 @@ header {
   #logo > img {
     width: 140px;
     border-radius: 50%;
-
+    border: #010101 solid 2px;
   }
   #logo:hover {
     transform: scale(1.1);

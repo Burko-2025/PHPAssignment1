@@ -19,12 +19,14 @@ header {
   top: 50px;
   left: 50px;
   width: 140px;
+  
 
 
 }
   #logo > img {
     width: 140px;
     border-radius: 50%;
+    border: #010101 solid 2px;
 
   }
   #logo:hover {
